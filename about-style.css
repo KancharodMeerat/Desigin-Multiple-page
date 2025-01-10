@@ -1,0 +1,380 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-weight: 400;
+    font-style: normal;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+header {
+    background: #FFFFFF;
+    color: #5b5b5b;
+    position: sticky;
+    scroll-snap-type: y mandatory;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    max-width: 156px;
+    height: 44px;
+    /* padding: 0px; */
+    /* margin: 0; */
+    /* display: flex; */
+    align-content: center;
+}
+
+h1 {
+    font-family: "Lato";
+    font-style: normal;
+}
+
+p {
+    font-family: "Lato";
+    font-style: normal;
+    font-weight: 400;
+}
+
+a {
+    font-family: "Lato";
+    font-style: normal;
+}
+
+button {
+    font-family: "Lato";
+    font-style: normal;
+}
+
+nav {
+    display: flex;
+    align-items: flex-end;
+    padding: 18px 65px 16px;
+    color: #fff;
+    border-bottom: 1px solid #D6D6D6;
+    gap: 140px;
+}
+
+.nav-groug {
+    display: flex;
+    justify-content: space-between
+}
+
+.nav-mix {
+    display: flex;
+}
+
+.nav-links {
+    list-style: none;
+    color: #fff;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    display: flex;
+}
+
+.nav-links a {
+    font-family: "Arimo";
+    font-weight: 700;
+    font-style: normal;
+    font-size: 12px;
+    transition: color 0.3s;
+    text-decoration: none;
+    color: #060606;
+    width: 79px;
+    height: 16px;
+    text-align: center;
+}
+
+.nav-login {
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding-left: 564px;
+    align-items: flex-end;
+}
+
+.user-icon .menu-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.cart-icon {
+    width: 33px;
+    height: 39px;
+}
+
+.nav-links a:hover {
+    color: #024E82;
+}
+
+.welcome {
+    color: #060606;
+    text-align: center;
+    position: relative;
+}
+
+.welcome img {
+    /* max-width: 1440px; */
+    height: 348px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.welcome-overlay {
+    position: absolute;
+    bottom: 70px;
+    max-width: 460px;
+    width: 100%;
+    /* transform: translate(60px, -50%); */
+    text-transform: uppercase;
+    left: 63px;
+}
+
+.welcome h1 {
+    color: #ffffff;
+    font-size: 48px;
+    margin: 0;
+    font-weight: 400;
+    width: 460px;
+    height: 48px;
+}
+
+/* select man or woman */
+.select-mix {
+    grid-template-columns: 600px 600px;
+    display: grid;
+    gap: 40px;
+    justify-content: center;
+    margin: 89px 63px 0;
+}
+
+.select {
+    position: relative;
+}
+
+.select img {
+    width: 600px;
+    height: 600px;
+}
+
+.select-overlay {
+    position: absolute;
+    bottom: 37px;
+    /* max-width: 460px; */
+    /* width: 100%; */
+    /* transform: translate(-50%, -50%); */
+    left: 202px;
+}
+
+.select-mix button {
+    font-family: 'Lato';
+    font-size: 24px;
+    font-weight: 400;
+    color: #14517B;
+    width: 196px;
+    height: 67px;
+    border-radius: 26px;
+    border: none;
+}
+
+.select-mix button:hover {
+    background-color: #024E82;
+    color: #D6D6D6;
+}
+
+/* The Founders */
+.the-founders {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 107px 63px 110px;
+}
+
+.the-founders-title {
+    margin-bottom: 115px;
+}
+
+.the-founders-title h2 {
+    font-family: Arimo;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0;
+    color: #1D1D1D;
+}
+
+.the-founders-mix {
+    display: grid;
+    grid-template-columns: repeat(4, 295px);
+    gap: 20px;
+}
+
+.the-founders-people {
+    height: 364px;
+}
+
+.the-founders-mix img {
+    width: 295px;
+    height: 280px;
+    object-fit: cover;
+    margin-bottom: 32px;
+}
+
+.the-founders-mix b {
+    font-family: 'Arimo';
+    font-size: 21px;
+    font-weight: 700;
+    /* text-align: center; */
+    color: #1D1D1D;
+}
+
+/* Testimonials */
+.testimonials-mix {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin: 107px 63px 110px; */
+}
+
+.testimonials-title {
+    margin-bottom: 115px;
+}
+
+.testimonials-title h2 {
+    font-family: Arimo;
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0;
+    color: #1D1D1D;
+}
+
+.testimonials-people {
+    display: grid;
+    grid-template-columns: 210px 663px;
+    width: 1366px;
+    height: 456px;
+    justify-content: center;
+    align-items: center;
+    gap: 43px;
+}
+
+.testimonials-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonials-text img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 12px;
+}
+
+.testimonials-text b {
+    width: 663px;
+    height: 102px;
+    font-family: 'Baloo';
+    font-weight: 400;
+    font-size: 24px;
+    color: #555555;
+}
+
+.testimonials-text p {
+    font-size: 21px;
+    font-weight: 700;
+    color: #1D1D1D;
+    margin: 0;
+    margin-top: 32px;
+}
+
+/* footer */
+.footer {
+    padding: 53px 63px 31px;
+}
+
+.footer-mix {
+    display: flex;
+    margin-bottom: 70px;
+}
+
+.footer-list {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-list b {
+    font-size: 12px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 29px;
+    font-weight: 700;
+    font-family: 'Arimo';
+}
+
+.footer-list p {
+    margin: 0 0 5px;
+    font-size: 16px;
+    color: #1D1D1D;
+}
+
+.footer-list p:hover {
+    text-decoration: underline;
+}
+
+.email-form {
+    display: flex;
+    align-items: center;
+    color: #555555;
+}
+
+.email-form input {
+    flex: 1;
+    padding-bottom: 17px;
+    border: none;
+    font-size: 16px;
+    font-family: 'Lato';
+    font-weight: 400;
+    display: block;
+    border-bottom: 1px solid #1D1D1D;
+}
+
+.email-form button {
+    padding-bottom: 17px;
+    border: none;
+    background-color: snow;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.email-form button:hover {
+    color: #ef1313;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #555555;
+    border-top: 1px solid #E8E8E8;
+}
+
+.footer-title {
+    margin-bottom: 10px;
+}
+
+.footer-title-two {
+    margin: 0;
+}
+
+.payment-icons {
+    display: flex;
+    gap: 16px;
+}
+
+.payment-icons img {
+    width: 56px;
+    height: 34px;
+}
