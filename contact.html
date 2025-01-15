@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Multiple page</title>
-        <link rel="stylesheet" href="contact-style.css">
+        <link rel="stylesheet" href="style.css">
         <!-- font style -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,33 +20,48 @@
                 <div class="nav-groug">
                     <div class="nav-mix">
                     <div class="nav-links">
-                        <a href="index.html">HOME</a>
-                        <a href="about.html">ABOUT</a>
-                        <a href="contact.html">CONTACT US</a>
+                        <a href="index.html" class="nav-black">HOME</a>
+                        <a href="about.html" class="nav-black">ABOUT</a>
+                        <a href="contact.html" class="nav-blue">CONTACT US</a>
                     </div>
                     </div>
                     <div class="nav-login">
                         <img class="user-icon" src="images/home/user-icon.png">
-                        <img class="cart-icon" src="images/home/cart-icon.png">
+                        <div class="cart-mix">
+                            <img class="cart-icon" src="images/home/cart-icon.png" alt="Cart Icon">
+                            <div class="cart-circle">
+                              <!-- <img src="images/home/cart-icon-circle.png" alt="Cart Icon Circle"> -->
+                              <div class="cart-num">
+                                <input type="text" value="10" />
+                              </div>
+                            </div>
+                        </div>
                         <img class="menu-icon" src="images/home/menu-icon.png">
                     </div>
                 </div>
             </nav>
         </head>
+        <div class="hamburger-menu">
+            <nav class="hamham-bar">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="contact.html">CONTACT US</a>
+            </nav>
+        </div>
 
-        <section class="welcome">
+        <section class="welcome-mini">
             <img src="images/contact-us/bg-contact.png">
-            <div class="welcome-overlay">
+            <div class="welcome-overlay-mini">
                 <h1>contact us</h1>
             </div>
         </section>
 
-        <!-- contact us from -->
+        <!-- contact us form -->
         <section class="contact-mix">
-            <div class="from-mix">
+            <div class="form-mix">
                 <h1>We would love to hear from you.</h1>
                 <p>If you have any query or any type of suggestion, you can contact us here. We would love to hear from you.</p>
-                <div class="form-mix">
+                <div class="form-mini">
                     <div class="form">
                         <div class="form-name">
                             <p>Name</p>
@@ -127,6 +142,15 @@
                 </div>
             </div>
         </footer>
+
+        <script>
+            const hamburger = document.querySelector('.menu-icon');
+            const hamburgermenu = document.querySelector('.hamburger-menu');
+    
+            hamburger.addEventListener('click', () => {
+                hamburgermenu.classList.toggle('show');
+            });
+        </script>
 
     </body>
 </html>

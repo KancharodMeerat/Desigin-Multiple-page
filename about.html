@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Multiple page</title>
-        <link rel="stylesheet" href="about-style.css">
+        <link rel="stylesheet" href="style.css">
         <!-- font style -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,23 +20,38 @@
                 <div class="nav-groug">
                     <div class="nav-mix">
                     <div class="nav-links">
-                        <a href="index.html">HOME</a>
-                        <a href="about.html">ABOUT</a>
-                        <a href="contact.html">CONTACT US</a>
+                        <a href="index.html" class="nav-black">HOME</a>
+                        <a href="about.html" class="nav-blue">ABOUT</a>
+                        <a href="contact.html" class="nav-black">CONTACT US</a>
                     </div>
                     </div>
                     <div class="nav-login">
                         <img class="user-icon" src="images/home/user-icon.png">
-                        <img class="cart-icon" src="images/home/cart-icon.png">
+                        <div class="cart-mix">
+                            <img class="cart-icon" src="images/home/cart-icon.png" alt="Cart Icon">
+                            <div class="cart-circle">
+                              <!-- <img src="images/home/cart-icon-circle.png" alt="Cart Icon Circle"> -->
+                              <div class="cart-num">
+                                <input type="text" value="10" />
+                              </div>
+                            </div>
+                        </div>
                         <img class="menu-icon" src="images/home/menu-icon.png">
                     </div>
                 </div>
             </nav>
         </head>
+        <div class="hamburger-menu">
+            <nav class="hamham-bar">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="contact.html">CONTACT US</a>
+            </nav>
+        </div>
 
-        <section class="welcome">
+        <section class="welcome-mini">
             <img src="images/about-northstar/bg-about.png">
-            <div class="welcome-overlay">
+            <div class="welcome-overlay-mini">
                 <h1>About Northstar</h1>
             </div>
         </section>
@@ -89,36 +104,45 @@
                 <h2>Testimonials</h2>
             </div>
 
-            <div class="testimonials-people">
-                <div class="testimonials-images">
-                    <img src="images/about-northstar/testimonials-people-1.png">
-                </div>
-                <div class="testimonials-text">
-                    <img src="images/about-northstar/testimonials-icon.png">
-                    <b>Once we ordered some accessories items and we got the products delivered in our doorstep, the customer support was super helpful and they answered all my queries.</b>
-                    <p>Stacy</p>
-                </div>
+            <div class="big-testimonials">
+                <div class="testimonials-people">
+                    <div class="testimonials-images">
+                        <img src="images/about-northstar/testimonials-people-1.png">
+                    </div>
+                    <div class="testimonials-text">
+                        <img src="images/about-northstar/testimonials-icon.png">
+                        <b>Once we ordered some accessories items and we got the products delivered in our doorstep, the customer support was super helpful and they answered all my queries.</b>
+                        <p>Stacy</p>
+                    </div>
+                </div>                
             </div>
-            <div class="testimonials-people two">
-                <div class="testimonials-images two">
-                    <img src="images/about-northstar/testimonials-people-2.png">
-                </div>
-                <div class="testimonials-text two">
-                    <img src="images/about-northstar/testimonials-icon.png">
-                    <b>I ordered 5 shirts from them and received them in no time. The customer support was awesome!</b>
-                    <p>Tiffany</p>
-                </div>
+
+            <div class="big-testimonials">
+                <div class="testimonials-people">
+                    <div class="testimonials-images">
+                        <img src="images/about-northstar/testimonials-people-2.png">
+                    </div>
+                    <div class="testimonials-text">
+                        <img src="images/about-northstar/testimonials-icon.png">
+                        <b>I ordered 5 shirts from them and received them in no time. The customer support was awesome!</b>
+                        <p>Tiffany</p>
+                    </div>
+                </div>                
             </div>
-            <div class="testimonials-people three">
-                <div class="testimonials-images three">
-                    <img src="images/about-northstar/testimonials-people-3.png">
-                </div>
-                <div class="testimonials-text three">
-                    <img src="images/about-northstar/testimonials-icon.png">
-                    <b>I got a wrong shirt so I contacted them and they happily offered me a refund. I will surely shop from them again.</b>
-                    <p>James</p>
-                </div>
+
+            <div class="big-testimonials">
+                <div class="testimonials-people">
+                    <div class="testimonials-images">
+                        <img src="images/about-northstar/testimonials-people-3.png">
+                    </div>
+                    <div class="testimonials-text">
+                        <img src="images/about-northstar/testimonials-icon.png">
+                        <b>I got a wrong shirt so I contacted them and they happily offered me a refund. I will surely shop from them again.</b>
+                        <p>James</p>
+                    </div>
+                </div>                
             </div>
+
         </section>
 
         <!-- footer -->
@@ -167,6 +191,15 @@
                 </div>
             </div>
         </footer>
+
+        <script>
+            const hamburger = document.querySelector('.menu-icon');
+            const hamburgermenu = document.querySelector('.hamburger-menu');
+    
+            hamburger.addEventListener('click', () => {
+                hamburgermenu.classList.toggle('show');
+            });
+        </script>
 
     </body>
 </html>

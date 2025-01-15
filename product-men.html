@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Multiple page</title>
-        <link rel="stylesheet" href="product.css">
+        <link rel="stylesheet" href="style.css">
         <!-- font style -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,25 +20,45 @@
                 <div class="nav-groug">
                     <div class="nav-mix">
                     <div class="nav-links">
-                        <a href="index.html">HOME</a>
-                        <a href="about.html">ABOUT</a>
-                        <a href="contact.html">CONTACT US</a>
+                        <a href="index.html" class="nav-black">HOME</a>
+                        <a href="about.html" class="nav-black">ABOUT</a>
+                        <a href="contact.html" class="nav-black">CONTACT US</a>
                     </div>
                     </div>
                     <div class="nav-login">
                         <img class="user-icon" src="images/home/user-icon.png">
-                        <img class="cart-icon" src="images/home/cart-icon.png">
+                        <div class="cart-mix">
+                            <img class="cart-icon" src="images/home/cart-icon.png" alt="Cart Icon">
+                            <div class="cart-circle">
+                              <!-- <img src="images/home/cart-icon-circle.png" alt="Cart Icon Circle"> -->
+                              <div class="cart-num">
+                                <input type="text" value="10" />
+                              </div>
+                            </div>
+                        </div>
                         <img class="menu-icon" src="images/home/menu-icon.png">
                     </div>
                 </div>
             </nav>
         </head>
+        <div class="hamburger-menu">
+            <nav class="hamham-bar">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="contact.html">CONTACT US</a>
+            </nav>
+        </div>
 
         <!-- product -->
-        <section class="products-mix">
+        <section class="products-page-mix">
             <div class="product-view">
                 <img class="bg-product" src="images/product/product-men.png" >
-                <img class="price-icon" src="images/product/icon-sale.png" >
+                <div class="mini-price-mix">
+                    <!-- <img src="images/home/cart-icon-circle.png" alt="Cart Icon Circle"> -->
+                    <div class="mini-price-num">
+                      <input type="text" value="-24%" />
+                    </div>
+                </div>
             </div>
             <div class="products-detail">
                 <div class="products-detail-page">
@@ -46,12 +66,23 @@
                 </div>
                 <div class="products-detail-price">
                     <h1>Plain T Shirt</h1>
-                    <img src="images/product/icon-star.png" >
+                    <div class="star-mix">
+                        <img src="images/product/star-icon-1.png" >
+                        <img src="images/product/star-icon-1.png" >
+                        <img src="images/product/star-icon-1.png" >
+                        <img src="images/product/star-icon-1.png" >
+                        <img src="images/product/star-icon-2.png" >
+                        <p>(15)</p>                        
+                    </div>
+
                     <div class="price-mix">
                         <h3 class="price-sale">$69.00</h3>
                         <h3 class="price-discounted">$49.00</h3>                        
                     </div>
-                    <p>A classic t-shirt never goes out of style. This is our most premium collection of shirts. This plain white shirt is made up of pure cotton and has a premium finish.</p>
+
+                    <div class="price-text">
+                        <p>A classic t-shirt never goes out of style. This is our most premium collection of shirts. This plain white shirt is made up of pure cotton and has a premium finish.</p>
+                    </div>
                     <div class="drop-list">
                         <select id="size-select">
                             <option >Select Size</option>
@@ -67,11 +98,21 @@
                         <p>Category: Men, Polo, Casual<br>Tags: Modern, Design, Cotton</p>
                     </div>
                     <div class="icon-mini">
-                        <img src="images/product/icon-mini-1.png">
+                        <div class="icon-circle">
+                            <img src="images/product/icon-mini-1.png">                            
+                        </div>
+                        <div class="icon-circle">
                         <img src="images/product/icon-mini-2.png">
+                        </div>
+                        <div class="icon-circle">
                         <img src="images/product/icon-mini-3.png">
+                        </div>
+                        <div class="icon-circle">
                         <img src="images/product/icon-mini-4.png">
+                        </div>
+                        <div class="icon-circle mail">
                         <img src="images/product/icon-mini-5.png">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -79,19 +120,18 @@
         
         <section class="product-description">
             <div class="description-title">
-                <h3 >Description</h3>
-                <h3 class="reviews">Reviews(0)</h3>
+              <h3 id="description-tab" class="active">Description</h3>
+              <h3 id="reviews-tab">Reviews(0)</h3>
             </div>
             <div class="description-section">
-                <p>
-                    A key objective is engaging digital marketing customers and allowing them to interact with the brand
-                    through servicing and delivery of digital media. Information is easy to access at a fast rate through
-                    the use of digital communications.<br><br>
-
-                    Users with access to the Internet can use many digital mediums, such as Facebook, YouTube, Forums,
-                    and Email. Through Digital communications, it creates a multi-communication channel where information
-                    can be quickly exchanged around the world by anyone without any regard to whom they are.
-                </p>
+              <p id="content">
+                A key objective is engaging digital marketing customers and allowing them to interact with the brand
+                through servicing and delivery of digital media. Information is easy to access at a fast rate through
+                the use of digital communications.<br><br>
+                Users with access to the Internet can use many digital mediums, such as Facebook, YouTube, Forums,
+                and Email. Through Digital communications, it creates a multi-communication channel where information
+                can be quickly exchanged around the world by anyone without any regard to whom they are.
+              </p>
             </div>
         </section>
         
@@ -141,6 +181,41 @@
                 </div>
             </div>
         </footer>
+
+        <script>
+            const hamburger = document.querySelector('.menu-icon');
+            const hamburgermenu = document.querySelector('.hamburger-menu');
+    
+            hamburger.addEventListener('click', () => {
+                hamburgermenu.classList.toggle('show');
+            });
+
+            // review
+            document.getElementById("description-tab").addEventListener("click", function () {
+            document.getElementById("content").innerHTML = `
+                A key objective is engaging digital marketing customers and allowing them to interact with the brand
+                through servicing and delivery of digital media. Information is easy to access at a fast rate through
+                the use of digital communications.<br><br>
+                Users with access to the Internet can use many digital mediums, such as Facebook, YouTube, Forums,
+                and Email. Through Digital communications, it creates a multi-communication channel where information
+                can be quickly exchanged around the world by anyone without any regard to whom they are.
+            `;
+            setActiveTab("description-tab");
+            });
+
+            document.getElementById("reviews-tab").addEventListener("click", function () {
+            document.getElementById("content").innerHTML = "No data";
+            setActiveTab("reviews-tab");
+            });
+
+            function setActiveTab(activeTabId) {
+            document.querySelectorAll(".description-title h3").forEach((tab) => {
+                tab.classList.remove("active");
+            });
+            document.getElementById(activeTabId).classList.add("active");
+            }
+
+        </script>
 
     </body>
 </html>

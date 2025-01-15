@@ -19,20 +19,35 @@
                 </div>
                 <div class="nav-groug">
                     <div class="nav-mix">
-                    <div class="nav-links">
-                        <a href="index.html">HOME</a>
-                        <a href="about.html">ABOUT</a>
-                        <a href="contact.html">CONTACT US</a>
-                    </div>
+                        <div class="nav-links">
+                            <a href="index.html" class="nav-blue">HOME</a>
+                            <a href="about.html" class="nav-black">ABOUT</a>
+                            <a href="contact.html" class="nav-black">CONTACT US</a>
+                        </div>
                     </div>
                     <div class="nav-login">
                         <img class="user-icon" src="images/home/user-icon.png">
-                        <img class="cart-icon" src="images/home/cart-icon.png">
+                        <div class="cart-mix">
+                            <img class="cart-icon" src="images/home/cart-icon.png" alt="Cart Icon">
+                            <div class="cart-circle">
+                              <!-- <img src="images/home/cart-icon-circle.png" alt="Cart Icon Circle"> -->
+                              <div class="cart-num">
+                                <input type="text" value="10" />
+                              </div>
+                            </div>
+                        </div>
                         <img class="menu-icon" src="images/home/menu-icon.png">
                     </div>
                 </div>
             </nav>
         </head>
+        <div class="hamburger-menu">
+            <nav class="hamham-bar">
+                <a href="index.html">HOME</a>
+                <a href="about.html">ABOUT</a>
+                <a href="contact.html">CONTACT US</a>
+            </nav>
+        </div>
 
         <section class="welcome">
             <img src="images/home/bg-header.png">
@@ -112,27 +127,27 @@
         <!-- option -->
         <section class="option-mix">
             <div class="option">
-                <img src="images/home/option-icon-1.png">
+                <img class="shop-img" src="images/home/option-icon-1.png">
                 <div class="option-text">
                     <b>Free Shipping</b>
                     <p>Enjoy free shipping on all orders above $100</p> 
                 </div>
             </div>
-            <div class="option two">
+            <div class="option">
                 <img src="images/home/option-icon-2.png">
                 <div class="option-text two">
                     <b>SUPPORT 24/7</b>
                     <p>Our support team is there to help you for queries</p> 
                 </div>
             </div>
-            <div class="option three">
+            <div class="option">
                 <img src="images/home/option-icon-3.png">
                 <div class="option-text three">
                     <b>30 DAYS RETURN</b>
                     <p>Simply return it within 30 days for an exchange.</p> 
                 </div>
             </div>
-            <div class="option four">
+            <div class="option">
                 <img src="images/home/option-icon-4.png">
                 <div class="option-text four">
                     <b>100% PAYMENT SECURE</b>
@@ -167,7 +182,9 @@
                     <div class="image-container">
                         <img src="images/home/top-gray-polo-shirt-1.png">
                         <div class="hover-overlay">
-                            <button>VIEW MORE</button>
+                            <a href="product-men.html">
+                                <button>VIEW MORE</button>
+                            </a>
                         </div>
                     </div>
                     <b>Gray Polo Shirt</b>
@@ -177,7 +194,9 @@
                     <div class="image-container">
                         <img src="images/home/top-red-shirt-2.png">
                         <div class="hover-overlay">
-                            <button>VIEW MORE</button>
+                            <a href="product-women.html">
+                                <button>VIEW MORE</button>
+                            </a>
                         </div>
                     </div>
                     <b>Red Shirt</b>
@@ -187,7 +206,9 @@
                     <div class="image-container">
                         <img src="images/home/top-olo-white-3.png">
                         <div class="hover-overlay">
-                            <button>VIEW MORE</button>
+                            <a href="product-women.html">
+                                <button>VIEW MORE</button>
+                            </a>
                         </div>
                     </div>
                     <b>Polo White Shirt</b>
@@ -197,7 +218,9 @@
                     <div class="image-container">
                         <img src="images/home/top-pink-casual-4.png">
                         <div class="hover-overlay">
-                            <button>VIEW MORE</button>
+                            <a href="product-women.html">
+                                <button>VIEW MORE</button>
+                            </a>
                         </div>
                     </div>
                     <b>Pink Casual Shirt</b>
@@ -256,6 +279,15 @@
                 </div>
             </div>
         </footer>
+
+        <script>
+            const hamburger = document.querySelector('.menu-icon');
+            const hamburgermenu = document.querySelector('.hamburger-menu');
+    
+            hamburger.addEventListener('click', () => {
+                hamburgermenu.classList.toggle('show');
+            });
+        </script>
         
 
     </body>
