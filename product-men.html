@@ -120,8 +120,8 @@
         
         <section class="product-description">
             <div class="description-title">
-              <h3 id="description-tab" class="active">Description</h3>
-              <h3 id="reviews-tab">Reviews(0)</h3>
+              <h3 id="description-tab" class="description-active active">Description</h3>
+              <h3 id="reviews-tab" class="reviews-active">Reviews(0)</h3>
             </div>
             <div class="description-section">
               <p id="content">
@@ -204,7 +204,7 @@
             });
 
             document.getElementById("reviews-tab").addEventListener("click", function () {
-            document.getElementById("content").innerHTML = "No data";
+            document.getElementById("content").innerHTML = "No reviews";
             setActiveTab("reviews-tab");
             });
 
@@ -215,6 +215,16 @@
             document.getElementById(activeTabId).classList.add("active");
             }
 
+            document.getElementById("description-tab").addEventListener("click", function () {
+                this.classList.toggle("clicked"); // เพิ่ม/ลบคลาส clicked
+
+                buttons.forEach((btn) => btn.classList.remove("clicked"));
+            });
+
+            document.getElementById("reviews-tab").addEventListener("click", function () {
+                this.classList.toggle("clicked"); // เพิ่ม/ลบคลาส clicked
+            });
+            
         </script>
 
     </body>
