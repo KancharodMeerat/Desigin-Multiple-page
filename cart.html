@@ -19,17 +19,16 @@
                 </div>
                 <div class="nav-groug">
                     <div class="nav-mix">
-                    <div class="nav-links">
-                        <a href="index.html" class="nav-black">HOME</a>
-                        <a href="about.html" class="nav-black">ABOUT</a>
-                        <a href="contact.html" class="nav-blue">CONTACT US</a>
-                    </div>
+                        <div class="nav-links">
+                            <a href="index.html" class="nav-blue">HOME</a>
+                            <a href="about.html" class="nav-black">ABOUT</a>
+                            <a href="contact.html" class="nav-black">CONTACT US</a>
+                        </div>
                     </div>
                     <div class="nav-login">
                         <img class="user-icon" src="images/home/user-icon.png">
                         <div class="cart-mix">
-                            <a href="cart.html"><img class="cart-icon" src="images/home/cart-icon.png" alt="Cart Icon"></a>                            
-                            <div class="cart-circle">
+                            <a href="cart.html"><img class="cart-icon" src="images/home/cart-icon.png" alt="Cart Icon"></a>                            <div class="cart-circle">
                               <!-- <img src="images/home/cart-icon-circle.png" alt="Cart Icon Circle"> -->
                               <div class="cart-num">
                                 <span class="quantity">0</span>
@@ -49,55 +48,65 @@
             </nav>
         </div>
 
-        <section class="welcome-mini">
-            <img src="images/contact-us/bg-contact.png">
-            <div class="welcome-overlay-mini">
-                <h1>contact us</h1>
+        <!-- cart-mix -->
+        <section class="shop-cart-mix">
+            <div class="breadcrumb">
+            <a href="index.html">Home</a> / <span>Shopping Cart</span>
             </div>
+            <table class="cart-table">
+            <thead>
+                <tr>
+                <th></th>
+                <th></th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items">
+                <tr>
+                <td><button class="remove-btn" ><img src="images/cart/close-icon.png"></button></td>
+                <td><img src="images/product/product-women.png" alt="Product Image" class="product-img" /></td>
+                <td>
+                    <div class="product-info">
+                    <span class="product-name">Plain White Shirt</span>
+                    </div>
+                </td>
+                <td  class="totals-row right num">$59.00</td>
+                <td><input type="number" value="1" class="quantity-input" /></td>
+                <td  class="totals-row right num">$59.00</td>
+                </tr>
+            </tbody>
+            </table>
         </section>
-
-        <!-- contact us form -->
-        <section class="contact-mix">
-            <div class="form-mix">
-                <h1>We would love to hear from you.</h1>
-                <p>If you have any query or any type of suggestion, you can contact us here. We would love to hear from you.</p>
-                <div class="form-mini">
-                    <div class="form">
-                        <div class="form-name">
-                            <p>Name</p>
-                            <input type="text">                            
-                        </div>
-                        <div class="form-name">
-                            <p>Email</p>
-                            <input type="email">                           
-                        </div>                      
-                    </div>
-                    <div class="form-textarea">
-                        <p>Message</p>
-                        <textarea id="message" name="message" rows="3"></textarea>
-                        <button>send message</button>
-                    </div>
-
-                </div>
-            </div>
-            <div class="infomation">
-                <div class="visit">
-                    <h2>Visit Us</h2>
-                    <p>UET Lahore, Punjab, Pakistan<br>
-                        Phone: +923039898987</p>
-                </div>
-                <div class="get-in-toch">
-                    <h2>Get In Touch</h2>
-                    <p>You can get in touch with us on this provided email. 
-
-                    <br><br>Email: hmjawad087@gmail.com
-                    </p>
-                </div>
-            </div>
+        
+        <!-- cart-totals -->
+        <section class="cart-totals">
+            <h1>Cart Totals</h1>
+            <table class="totals-row">
+                <thead>
+                    <tr>
+                        <th class="totals-row left">Subtotal</th>
+                        <th class="totals-row right">$59.00</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="totals-row left">Shipping Free</td>
+                        <td class="totals-row right">FREE!!!</td>
+                    </tr>
+                    <tr class="totals-row result">
+                        <td class="totals-row left total">Total</td>
+                        <td class="totals-row right num">$59.00</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="check-out.html"><button class="checkout-btn">Proceed to Checkout</button></a>
         </section>
 
         <!-- footer -->
-        <footer class="footer contact">
+        <footer class="footer">
             <div class="footer-mix">
                 <div class="footer-list">
                     <b>Company Info</b>
@@ -143,7 +152,21 @@
             </div>
         </footer>
 
-        <script src="app.js"></script>
+        <script src="app.js">
+        const cartButton = document.querySelector(".add-to-cart");
 
+        cartButton.addEventListener("click", () => {
+        const product = cartButton.getAttribute("data-product");
+        const price = cartButton.getAttribute("data-price");
+
+        // เก็บข้อมูลใน localStorage
+        localStorage.setItem("cartProduct", product);
+        localStorage.setItem("cartPrice", price);
+
+        window.location.href = "checkout.html";
+        });
+
+        </script>
+        
     </body>
 </html>

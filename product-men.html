@@ -28,12 +28,11 @@
                     <div class="nav-login">
                         <img class="user-icon" src="images/home/user-icon.png">
                         <div class="cart-mix">
-                            <img class="cart-icon" src="images/home/cart-icon.png" alt="Cart Icon">
+                            <a href="cart.html"><img class="cart-icon" src="images/home/cart-icon.png" alt="Cart Icon"></a>
                             <div class="cart-circle">
                               <!-- <img src="images/home/cart-icon-circle.png" alt="Cart Icon Circle"> -->
                               <div class="cart-num">
-                                <input type="text" value="10" />
-                              </div>
+                                <span class="quantity">0</span>                              </div>
                             </div>
                         </div>
                         <img class="menu-icon" src="images/home/menu-icon.png">
@@ -65,7 +64,7 @@
                     <h2><a href="index.html">Home /</a> <a href="index.html">Shop /</a> <a href="index.html">Men /</a> <span class="shop">Shop</span></h2>
                 </div>
                 <div class="products-detail-price">
-                    <h1>Plain T Shirt</h1>
+                    <h1 class="product-name" id="1">Plain T Shirt</h1>
                     <div class="star-mix">
                         <img src="images/product/star-icon-1.png" >
                         <img src="images/product/star-icon-1.png" >
@@ -93,7 +92,8 @@
                         </select>
                     </div>
 
-                    <button class="add-to-cart">Add to Cart</button>
+                    <a href="cart.html"><button class="add-to-cart" id="add-to-cart">Add to Cart</button></a>
+                    
                     <div class="product-tags">
                         <p>Category: Men, Polo, Casual<br>Tags: Modern, Design, Cotton</p>
                     </div>
@@ -182,13 +182,7 @@
             </div>
         </footer>
 
-        <script>
-            const hamburger = document.querySelector('.menu-icon');
-            const hamburgermenu = document.querySelector('.hamburger-menu');
-    
-            hamburger.addEventListener('click', () => {
-                hamburgermenu.classList.toggle('show');
-            });
+        <script src="app.js">
 
             // review
             document.getElementById("description-tab").addEventListener("click", function () {

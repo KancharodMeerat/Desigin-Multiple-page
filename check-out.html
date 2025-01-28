@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href='https://fonts.googleapis.com/css?family=Baloo' rel='stylesheet'>
-        <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 
     <body>
         <head>
@@ -19,11 +19,11 @@
                 </div>
                 <div class="nav-groug">
                     <div class="nav-mix">
-                    <div class="nav-links">
-                        <a href="index.html" class="nav-black">HOME</a>
-                        <a href="about.html" class="nav-black">ABOUT</a>
-                        <a href="contact.html" class="nav-blue">CONTACT US</a>
-                    </div>
+                        <div class="nav-links">
+                            <a href="index.html" class="nav-black">HOME</a>
+                            <a href="about.html" class="nav-black">ABOUT</a>
+                            <a href="contact.html" class="nav-black">CONTACT US</a>
+                        </div>
                     </div>
                     <div class="nav-login">
                         <img class="user-icon" src="images/home/user-icon.png">
@@ -49,55 +49,72 @@
             </nav>
         </div>
 
-        <section class="welcome-mini">
-            <img src="images/contact-us/bg-contact.png">
-            <div class="welcome-overlay-mini">
-                <h1>contact us</h1>
+        <!-- cart-mix -->
+        <section class="billing-mix">
+            <div class="breadcrumb">
+            <a href="index.html">Home</a> / <span>checkout</span>
+            </div>
+            <div class="billing-details">
+                <h1>Billing details</h1>
+                <div class="form-bill one">
+                    <p>Full Name<span>*</span></p>
+                    <input type="text">                            
+                </div>
+                <div class="form-bill">
+                    <p>Street address<span>*</span></p>
+                    <input type="text" placeholder="House number and street name">                           
+                </div>
+                <div class="form-bill">
+                    <p>Town / City<span>*</span></p>
+                    <input type="text">                           
+                </div>    
+                <div class="form-bill">
+                    <p>Phone<span>*</span></p>
+                    <input type="tel">                           
+                </div>    
+                <div class="form-bill">
+                    <p>Email address<span>*</span></p>
+                    <input type="email">                           
+                </div>        
             </div>
         </section>
+        
+        <!-- order-totals -->
+        <section class="order-totals">
+            <h1>Your order</h1>
+            <table class="order-product">
+                <thead>
+                    <tr>
+                        <th class="check-out-product">Product</th>
+                        <th class="check-out-total">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="product-list">Plain White Shirt</td>
+                        <td>$59.00</td>
+                    </tr>
+                        <td>Subtotal</td>
+                        <td class="product-subtotal">$59.00</td>
+                    <tr class="order-result">
+                        <td class="order-product border-total"></td>
+                        <td class="order-product border-total">$59.00</td>
+                    </tr>
+                </tbody>
+            </table>
 
-        <!-- contact us form -->
-        <section class="contact-mix">
-            <div class="form-mix">
-                <h1>We would love to hear from you.</h1>
-                <p>If you have any query or any type of suggestion, you can contact us here. We would love to hear from you.</p>
-                <div class="form-mini">
-                    <div class="form">
-                        <div class="form-name">
-                            <p>Name</p>
-                            <input type="text">                            
-                        </div>
-                        <div class="form-name">
-                            <p>Email</p>
-                            <input type="email">                           
-                        </div>                      
-                    </div>
-                    <div class="form-textarea">
-                        <p>Message</p>
-                        <textarea id="message" name="message" rows="3"></textarea>
-                        <button>send message</button>
-                    </div>
-
+            <div class="order-total-mix">
+                <div class="order-total-result">
+                    <p>Cash on delivery.  Please contact us if you require assistance or wish to make alternate arrangements.</p>
                 </div>
-            </div>
-            <div class="infomation">
-                <div class="visit">
-                    <h2>Visit Us</h2>
-                    <p>UET Lahore, Punjab, Pakistan<br>
-                        Phone: +923039898987</p>
-                </div>
-                <div class="get-in-toch">
-                    <h2>Get In Touch</h2>
-                    <p>You can get in touch with us on this provided email. 
-
-                    <br><br>Email: hmjawad087@gmail.com
-                    </p>
+                <div class="place-order-btn">
+                    <button>place order</button>                    
                 </div>
             </div>
         </section>
 
         <!-- footer -->
-        <footer class="footer contact">
+        <footer class="footer">
             <div class="footer-mix">
                 <div class="footer-list">
                     <b>Company Info</b>
@@ -143,7 +160,17 @@
             </div>
         </footer>
 
-        <script src="app.js"></script>
+        <script src="app.js">
+        // รับข้อมูลจาก localStorage
+        const product = localStorage.getItem("cartProduct");
+        const price = localStorage.getItem("cartPrice");
+
+        // แสดงผลในตาราง
+        document.querySelector(".product-list").textContent = product;
+        document.querySelector(".product-subtotal").textContent = `$${price}`;
+        document.querySelector(".product-total").textContent = `$${price}`;
+        </script>
+        
 
     </body>
 </html>

@@ -28,11 +28,11 @@
                     <div class="nav-login">
                         <img class="user-icon" src="images/home/user-icon.png">
                         <div class="cart-mix">
-                            <img class="cart-icon" src="images/home/cart-icon.png" alt="Cart Icon">
+                            <a href="cart.html"><img class="cart-icon" src="images/home/cart-icon.png" alt="Cart Icon"></a>
                             <div class="cart-circle">
                               <!-- <img src="images/home/cart-icon-circle.png" alt="Cart Icon Circle"> -->
                               <div class="cart-num">
-                                <input type="text" value="10" />
+                                <span class="quantity">0</span>
                               </div>
                             </div>
                         </div>
@@ -280,15 +280,7 @@
             </div>
         </footer>
 
-        <script>
-            const hamburger = document.querySelector('.menu-icon');
-            const hamburgermenu = document.querySelector('.hamburger-menu');
+        <script src="app.js"></script>
     
-            hamburger.addEventListener('click', () => {
-                hamburgermenu.classList.toggle('show');
-            });
-        </script>
-        
-
     </body>
 </html>
