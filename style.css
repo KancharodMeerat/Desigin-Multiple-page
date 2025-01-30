@@ -1145,10 +1145,10 @@ nav {
   }
   
   .quantity-input {
-    width: 53px;
+    width: 40px;
     padding: 5px;
     text-align: center;
-    height: 42px;
+    height: 29px;
     border: 2px solid #EBEBEB;
   }
   
@@ -1370,6 +1370,7 @@ nav {
 .order-total-result {
     border: 1px solid #EBEBEB;
     margin: 33px 24px;
+    background-color: #FBFBFB;
 }
 
 .order-total-result p {
@@ -1400,9 +1401,21 @@ nav {
     border: none;
 }
 
+.order-product.subtotal-font {
+    color: #555555;
+    border-bottom: 1px solid #EBEBEB;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}
+
+.totals-row.right.num {
+    color: #1D1D1D;
+}
+
 /* footer */
 .footer {
-    margin: 53px 63px 31px;
+    padding: 53px 63px 31px;
     background-color: #FBFBFB;
 }
 
@@ -1496,7 +1509,7 @@ nav {
 }
 
 /* หน้าจอใหญ่ */
-@media (min-width: 1366px) {
+@media (min-width: 1367px) {
 
     .menu-icon {
         display: none;
@@ -1509,6 +1522,32 @@ nav {
 
     .description-section {
         width: 1240px;
+    }
+
+    /* cart */
+    .shop-cart-mix {
+        margin: 40px auto 51px;
+        max-width: 1366px;
+        width: 100%;
+    }
+
+    .cart-totals {
+        max-width: 1366px;
+        width: 100%;
+        margin: 0 auto 107px;
+    }
+
+    /* check out */
+    .billing-mix {
+        max-width: 1366px;
+        width: 100%;
+        margin: 40px auto 51px;
+    }
+
+    .order-totals {
+        max-width: 1366px;
+        width: 100%;
+        margin: 0 auto;
     }
 }
 
@@ -1708,16 +1747,16 @@ nav {
 
     /* check out */
     .order-product {
-        width: 100%;
+        width: 90%;
     }
 
     .order-total-mix {
-        width: 100%;
+        width: 90%;
     }
     
     /* footer */
     .footer {
-        margin: 53px 63px 31px;
+        padding: 53px 63px 31px;
     }
 
     .footer.contact {
@@ -1989,9 +2028,17 @@ nav {
         margin-right: 0;
     }
 
+    .checkout-btn {
+        width: 100%;
+    }
+
     /* check out */
     .billing-mix {
         margin: 40px 23px 51px;
+    }
+
+    .place-order-btn button {
+        width: 90%;
     }
 
     .order-totals {
@@ -2018,7 +2065,7 @@ nav {
     
     /* footer */
     .footer {
-        margin: 53px 30px 31px;
+        padding: 53px 30px 31px;
     }
 
     .footer-mix {

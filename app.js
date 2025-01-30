@@ -160,22 +160,22 @@ function loadOrderTotals() {
           (item) => `
           <tr>
               <td><span class="product-list">${item.name}</span></td>
-              <td>${(item.price * item.quantity).toFixed(2)}</td>
+              <td class="order-body-font">$${(item.price * item.quantity).toFixed(2)}</td>
           </tr>`
       )
       .join("");
 
   const orderTableSubtotal = `
       <tr>
-          <td>Subtotal</td>
-          <td>${totalPrice}</td>
+          <td class="order-product subtotal-font">Subtotal</td>
+          <td class="order-product subtotal-font">$${totalPrice}</td>
       </tr>
   `;
 
   const orderTableTotal = `
       <tr>
           <td class="order-product border-total"></td>
-          <td class="order-product border-total"><b>${totalPrice}</b></td>
+          <td class="order-product border-total"><b>$${totalPrice}</b></td>
       </tr>
   `;
 
@@ -209,3 +209,76 @@ function loadOrderTotals() {
 document.addEventListener('DOMContentLoaded', () => {
   loadOrderTotals();
 });
+
+//Payment successful!
+document.addEventListener('click', (event) => {
+    if (event.target.matches('.place-order-btn button')) {
+        alert("Payment successful!");
+
+        localStorage.removeItem('cart');
+
+        document.getElementById('cart-items').innerHTML = "<tr><td>Your cart is empty</td></tr>";
+        document.querySelector('.quantity').innerText = "0";
+        
+        loadOrderTotals();
+    }
+});
+
+//product-img
+
+document.addEventListener('DOMContentLoaded', function () { 
+    const productImages = document.querySelectorAll('.image-container');
+    
+    productImages.forEach(image => {
+        image.addEventListener('click', function() {
+            const productId = image.getAttribute('data-product');
+            console.log("Product ID:", productId); 
+            
+            if (productId) {
+                updateProductPage(productId);
+            } else {
+                console.warn("ไม่พบค่า productId");
+            }
+        });
+    });
+
+    function updateProductPage(productId) {
+        let productDetails = {
+            1: { name: 'Plain White Shirt', price: '$29.00', bgImage: 'images/home/new-plain-white-shirt-1.png', tags: 'Women', page: 'product-women.html' },
+            2: { name: 'Denim Jacket', price: '$69.00', bgImage: 'images/home/new-denim-jacket-2.png', tags: 'Women', page: 'product-women.html' },
+            3: { name: 'Black Polo Shirt', price: '$49.00', bgImage: 'images/home/new-black-polo-shirt-3.png', tags: 'Women', page: 'product-women.html' },
+            4: { name: 'Blue Sweatshirt', price: '$79.00', bgImage: 'images/home/new-blue-sweatshirt-4.png', tags: 'Women', page: 'product-women.html' },
+            5: { name: 'Blue Plain Shirt', price: '$49.00', bgImage: 'images/home/new-blue-plain-shirt-5.png', tags: 'Men', page: 'product-men.html' },
+            6: { name: 'Dark Blue Shirt', price: '$89.00', bgImage: 'images/home/new-dark-blue-shirt-6.png', tags: 'Men', page: 'product-men.html' },
+            7: { name: 'Outcast T Shirt', price: '$19.00', bgImage: 'images/home/new-outcast-shirt-7.png', tags: 'Men', page: 'product-men.html' },
+            8: { name: 'Polo Plain Shirt', price: '$29.00', bgImage: 'images/home/new-polo-shirt-8.png', tags: 'Men', page: 'product-men.html' },
+            9: { name: 'Gray Polo Shirt', price: '$49.00', bgImage: 'images/home/top-gray-polo-shirt-1.png', tags: 'Men', page: 'product-men.html' },
+            10: { name: 'Red Shirt', price: '$69.00', bgImage: 'images/home/top-red-shirt-2.png', tags: 'Women', page: 'product-women.html' },
+            11: { name: 'Polo White Shirt', price: '$29.00', bgImage: 'images/home/top-olo-white-3.png', tags: 'Women', page: 'product-women.html' },
+            12: { name: 'Pink Casual Shirt', price: '$39.00', bgImage: 'images/home/top-pink-casual-4.png', tags: 'Women', page: 'product-women.html' }
+        };
+
+        const product = productDetails[productId];
+
+        if (product) {
+            console.log("Updating product:", product);
+
+            const bgProduct = document.querySelector('#bg-product');
+            const productName = document.querySelector('#product-name');
+            const productPrice = document.querySelector('#product-price');
+            const productTags = document.querySelector('#product-tags');
+            const productPage = document.querySelector('#product-page');
+
+            // console.log(bgProduct, productName)
+            // อัปเดตข้อมูลบนหน้า product
+            bgProduct.src = product.bgImage;
+            productName.textContent = product.name;
+            productPrice.textContent = product.price;
+            productTags.textContent = product.tags;
+            productPage.href = product.page;
+        } else {
+            console.warn('ไม่พบข้อมูลสินค้าสำหรับ ID:', productId);
+        }
+    }
+});
+

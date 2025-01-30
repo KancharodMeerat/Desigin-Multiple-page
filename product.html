@@ -32,8 +32,7 @@
                             <div class="cart-circle">
                               <!-- <img src="images/home/cart-icon-circle.png" alt="Cart Icon Circle"> -->
                               <div class="cart-num">
-                                <span class="quantity">0</span>
-                              </div>
+                                <span class="quantity">0</span>                              </div>
                             </div>
                         </div>
                         <img class="menu-icon" src="images/home/menu-icon.png">
@@ -52,9 +51,8 @@
         <!-- product -->
         <section class="products-page-mix">
             <div class="product-view">
-                <img class="bg-product" src="images/product/product-women.png" >
+                <img class="bg-product"  id="bg-product" src="" alt="Product Image" >
                 <div class="mini-price-mix">
-                    <!-- <img src="images/home/cart-icon-circle.png" alt="Cart Icon Circle"> -->
                     <div class="mini-price-num">
                       <input type="text" value="-24%" />
                     </div>
@@ -62,10 +60,10 @@
             </div>
             <div class="products-detail">
                 <div class="products-detail-page">
-                    <h2><a href="index.html">Home /</a> <a href="index.html">Shop /</a> <a href="index.html">Women /</a> <span class="shop">Shop</span></h2>
+                    <h2><a href="index.html">Home /</a> <a href="index.html">Shop /</a> <a href="index.html" id="product-page">Men /</a> <span class="shop">Shop</span></h2>
                 </div>
                 <div class="products-detail-price">
-                    <h1 class="product-name" id="1">Plain White Shirt</h1>
+                    <h1 class="product-name" id="product-name">Plain T Shirt</h1>
                     <div class="star-mix">
                         <img src="images/product/star-icon-1.png" >
                         <img src="images/product/star-icon-1.png" >
@@ -74,14 +72,15 @@
                         <img src="images/product/star-icon-2.png" >
                         <p>(15)</p>                        
                     </div>
+
                     <div class="price-mix">
                         <h3 class="price-sale">$69.00</h3>
-                        <h3 class="price-discounted">$59.00</h3>                        
+                        <h3 class="price-discounted" id="product-price">$49.00</h3>                        
                     </div>
+
                     <div class="price-text">
-                        <p>A classic t-shirt never goes out of style. This is our most premium collection of shirts. This plain white shirt is made up of pure cotton and has a premium finish.</p>    
+                        <p>A classic t-shirt never goes out of style. This is our most premium collection of shirts. This plain white shirt is made up of pure cotton and has a premium finish.</p>
                     </div>
-                    
                     <div class="drop-list">
                         <select id="size-select">
                             <option >Select Size</option>
@@ -92,9 +91,10 @@
                         </select>
                     </div>
 
-                    <a href="cart.html"><button class="add-to-cart">Add to Cart</button></a>
+                    <a href="cart.html"><button class="add-to-cart" id="add-to-cart">Add to Cart</button></a>
+                    
                     <div class="product-tags">
-                        <p>Category: Women, Polo, Casual<br>Tags: Modern, Design, Cotton</p>
+                        <p>Category: <span id="product-tags" >Men</span>, Polo, Casual<br>Tags: Modern, Design, Cotton</p>
                     </div>
                     <div class="icon-mini">
                         <div class="icon-circle">
@@ -116,10 +116,10 @@
                 </div>
             </div>
         </section>
-
+        
         <section class="product-description">
             <div class="description-title">
-              <h3 id="description-tab" class="description-active">Description</h3>
+              <h3 id="description-tab" class="description-active active">Description</h3>
               <h3 id="reviews-tab" class="reviews-active">Reviews(0)</h3>
             </div>
             <div class="description-section">
@@ -182,7 +182,7 @@
         </footer>
 
         <script src="app.js">
-            
+
             // review
             document.getElementById("description-tab").addEventListener("click", function () {
             document.getElementById("content").innerHTML = `
@@ -217,6 +217,7 @@
             document.getElementById("reviews-tab").addEventListener("click", function () {
                 this.classList.toggle("clicked"); // เพิ่ม/ลบคลาส clicked
             });
+            
         </script>
 
     </body>
